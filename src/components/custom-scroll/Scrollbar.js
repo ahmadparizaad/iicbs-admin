@@ -1,7 +1,12 @@
+'use client'
+
 import PropTypes from 'prop-types';
-import SimpleBar from 'simplebar-react';
+import dynamic from 'next/dynamic';
 import 'simplebar/dist/simplebar.min.css';
 import { Box, styled } from '@mui/material';
+
+// Dynamically import SimpleBar on the client to avoid document/window access during SSR
+const SimpleBar = dynamic(() => import('simplebar-react'), { ssr: false });
 
 const SimpleBarStyle = styled(SimpleBar)(() => ({
   maxHeight: '100%',
@@ -10,7 +15,7 @@ const SimpleBarStyle = styled(SimpleBar)(() => ({
 
 const Scrollbar = (props) => {
   const { children, sx, ...other } = props;
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+  const isMobile = typeof navigator !== 'undefined' && /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
     navigator.userAgent,
   );
 
