@@ -1,18 +1,26 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 
-const PageContainer = ({ title, description, children }) => (
-  <div>
-    <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </Helmet>
-    {children}
-  </div>
-);
+const PageContainer = ({ title, description, children }) => {
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (title) document.title = title;
+      if (description) {
+        let meta = document.querySelector('meta[name="description"]');
+        if (!meta) {
+          meta = document.createElement('meta');
+          meta.name = 'description';
+          document.head.appendChild(meta);
+        }
+        meta.content = description;
+      }
+    }
+  }, [title, description]);
+
+  return <div>{children}</div>;
+};
 
 PageContainer.propTypes = {
   title: PropTypes.string,
