@@ -1,7 +1,9 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  distDir: 'build', // Changes the build output directory to `build`
+  // Use default output (do not use `output: 'export'`), so Vercel
+  // and Next.js produce the required runtime artifacts including
+  // `routes-manifest.json`. Also keep the default `.next` output dir.
 }
 
 export default nextConfig
