@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Modernize React App',
-  description: 'Web site created using create-react-app',
+  title: 'IICBS Admin Dashboard',
+  description: '',
 }
 
 export default function RootLayout({
