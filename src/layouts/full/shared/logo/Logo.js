@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from 'src/assets/images/logos/logo.png';
+import logo from '../../../../assets/images/logos/logo.png';
 import { styled } from '@mui/material';
 
 const LinkStyled = styled(Link)(() => ({
@@ -15,7 +15,7 @@ const LinkStyled = styled(Link)(() => ({
 const Logo = () => {
   return (
     <LinkStyled to="/">
-    <img src={logo} alt="Logo" height={100} />
+    <img src={logo?.src ?? logo} alt="Logo" height={100} />
     <span style={{ marginTop: '8px', fontSize: '12px', color: 'black', fontWeight: 'bold', textDecoration: 'none' }}></span>
   </LinkStyled>
   )

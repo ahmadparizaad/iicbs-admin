@@ -13,7 +13,7 @@ import {
 
 import { IconListCheck, IconMail, IconUser } from '@tabler/icons';
 
-import ProfileImg from 'src/assets/images/profile/user-1.jpg';
+import ProfileImg from '../../../assets/images/profile/user-1.jpg';
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -40,8 +40,8 @@ const Profile = () => {
         onClick={handleClick2}
       >
         <Avatar
-          src={ProfileImg}
-          alt={ProfileImg}
+          src={ProfileImg?.src ?? ProfileImg}
+          alt="Profile"
           sx={{
             width: 35,
             height: 35,

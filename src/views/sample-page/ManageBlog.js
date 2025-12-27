@@ -187,7 +187,9 @@ const ManageBlogs = () => {
         </Button>
       </div>
       <MyOpportunities>
-        <BackIcon component={IconArrowLeft} />
+        <BackIcon aria-label="back">
+          <IconArrowLeft />
+        </BackIcon>
         <TextWrapper>Manage Blogs</TextWrapper>
       </MyOpportunities>
       <BlogCardContainer>

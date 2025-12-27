@@ -199,7 +199,9 @@ const ManageNews = () => {
         </Button>
       </div>
       <MyOpportunities>
-        <BackIcon component={IconArrowLeft} />
+        <BackIcon aria-label="back">
+          <IconArrowLeft />
+        </BackIcon>
         <TextWrapper>Manage News</TextWrapper>
       </MyOpportunities>
       <NewsCardContainer>

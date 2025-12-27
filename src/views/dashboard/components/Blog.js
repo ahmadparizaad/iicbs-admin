@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CardContent, Typography, Grid, Rating, Tooltip, Fab } from '@mui/material';
-import img1 from 'src/assets/images/products/s4.jpg';
-import img2 from 'src/assets/images/products/s5.jpg';
-import img3 from 'src/assets/images/products/s7.jpg';
-import img4 from 'src/assets/images/products/s11.jpg';
+import img1 from '../../../assets/images/products/s4.jpg';
+import img2 from '../../../assets/images/products/s5.jpg';
+import img3 from '../../../assets/images/products/s7.jpg';
+import img4 from '../../../assets/images/products/s11.jpg';
 import { Stack } from '@mui/system';
 import { IconBasket } from '@tabler/icons';
 import BlankCard from '../../../components/shared/BlankCard';
@@ -51,7 +51,7 @@ const Blog = () => {
                 <Grid item sm={12} md={4} lg={3} key={index}>
                     <BlankCard>
                         <Typography component={Link} to="/">
-                            <img src={product.photo} alt="img" width="100%" />
+                            <img src={product.photo?.src ?? product.photo} alt="img" width="100%" />
                         </Typography>
                         <Tooltip title="Add To Cart">
                             <Fab
